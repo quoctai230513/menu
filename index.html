@@ -1,0 +1,136 @@
+<!DOCTYPE html>
+<html lang="vi">
+<head>
+  <meta charset="UTF-8">
+  <title>MENU VIP</title>
+  <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <style>
+    * {
+      box-sizing: border-box;
+      margin: 0;
+      padding: 0;
+      font-family: 'Segoe UI', sans-serif;
+    }
+
+    body {
+      min-height: 200vh;
+      background: linear-gradient(135deg, #0f0c29, #302b63, #24243e);
+      background-size: cover;
+      color: #fff;
+      padding: 30px 10px;
+      display: flex;
+      justify-content: center;
+    }
+
+    .menu {
+      width: 100%;
+      max-width: 500px;
+      background: rgba(0, 0, 0, 0.6);
+      border-radius: 20px;
+      padding: 25px;
+      box-shadow: 0 0 30px #00f0ff80;
+    }
+
+    h2 {
+      text-align: center;
+      font-size: 28px;
+      margin-bottom: 25px;
+      color: #00f0ff;
+      text-shadow: 0 0 8px #00f0ff;
+    }
+
+    .option-grid {
+      display: grid;
+      grid-template-columns: 1fr 1fr;
+      gap: 20px;
+    }
+
+    .option-block {
+      background: rgba(0, 0, 50, 0.4);
+      border: 1px solid #00f0ff;
+      border-radius: 12px;
+      padding: 15px;
+      text-align: center;
+      font-size: 16px;
+      color: #00f0ff;
+      cursor: pointer;
+      transition: all 0.3s ease;
+      box-shadow: 0 0 15px #00f0ff30;
+    }
+
+    .option-block:hover {
+      background: rgba(0, 0, 50, 0.6);
+      box-shadow: 0 0 20px #00f0ff;
+    }
+
+    .option-block.active {
+      background: #00f0ff;
+      color: #000;
+      box-shadow: 0 0 25px #00f0ff, inset 0 0 10px #000;
+      font-weight: bold;
+      border-color: #fff;
+    }
+
+    .dpi-section {
+      margin-top: 30px;
+      text-align: center;
+    }
+
+    input[type="range"] {
+      width: 100%;
+      accent-color: #00f0ff;
+    }
+
+    .dpi-value {
+      margin-top: 10px;
+      font-size: 18px;
+    }
+
+    .admin {
+      margin-top: 20px;
+      text-align: center;
+      color: #ff00ff;
+      font-size: 14px;
+      text-shadow: 0 0 5px #ff00ff;
+    }
+  </style>
+</head>
+<body>
+  <div class="menu">
+    <h2>MENU VIP</h2>
+
+    <div class="option-grid">
+      <div class="option-block" onclick="toggleActive(this)">🔫 AIMLOCK</div>
+      <div class="option-block" onclick="toggleActive(this)">🎯 AIMBOT</div>
+      <div class="option-block" onclick="toggleActive(this)">⚡ AIMHEAD</div>
+      <div class="option-block" onclick="toggleActive(this)">🤖 LOCK SHOT</div>
+      <div class="option-block" onclick="toggleActive(this)">🛡️ LOCK TIỂU LIÊN</div>
+      <div class="option-block" onclick="toggleActive(this)">🧩 CHỐNG RUNG</div>
+      <div class="option-block" onclick="toggleActive(this)">🔧 ANTIBAND</div>
+      <div class="option-block" onclick="toggleActive(this)">🚀 LOCK ĐẦU</div>
+      <div class="option-block" onclick="toggleActive(this)">🎭 HEADLOCK</div>
+      <div class="option-block" onclick="toggleActive(this)">📌 HEASHOT 90%</div>
+      <div class="option-block" onclick="toggleActive(this)">🎮 BUFF MÀN</div>
+      <div class="option-block" onclick="toggleActive(this)">⏱️ CHỐNH LỐ</div>
+    </div>
+
+    <div class="dpi-section">
+      <label for="dpi">🎚️ Điều chỉnh Nhạy</label><br />
+      <input type="range" id="dpi" min="0" max="1000" value="100" oninput="updateDPI(this.value)" />
+      <div class="dpi-value" id="dpiValue">DPI: 100</div>
+    </div>
+
+    <div class="admin">ADMIN: Minhlam x tweak</div>
+  </div>
+
+  <script>
+    function updateDPI(val) {
+      document.getElementById("dpiValue").textContent = "DPI: " + val;
+    }
+
+    function toggleActive(el) {
+      el.classList.toggle("active");
+    }
+  </script>
+</body>
+</html>
